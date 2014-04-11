@@ -1,0 +1,22 @@
+@(history: List[models.HistoryItem])
+
+@main(title = "content history") {
+
+
+<div class="container">
+    @for(h <- history) {
+    <div class="row">
+        <div>
+            <span>At @h.when.toString("dd/MM/yyyy HH:mm")</span>
+            <span>@h.user.name changed</span>
+            <span>@h.location.field</span> to
+        </div>
+        <div class="well-small">
+            <span>@Html(h.value.getOrElse(""))</span>
+        </div>
+    </div>
+    <hr>
+    }
+</div>
+
+}

@@ -1,0 +1,8 @@
+
+GET   /          controllers.AppMain.welcome
+GET   /collactivityConnection          controllers.AppMain.collactivityConnection
+GET   /history/:contentId   controllers.AppMain.showHistory(contentId: String)
+GET   /history/:contentId/:field   controllers.AppMain.showFieldHistory(contentId: String, field:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
